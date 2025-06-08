@@ -5,8 +5,8 @@
   "description": "Landing page for Lenticular AI",
   "private": true,
   "scripts": {
-    "dev": "echo \"No dev script configured, serve index.html with a local server.\" && exit 0",
-    "build": "echo \"No build script configured, static site.\" && exit 0",
+    "dev": "echo \"No dev script configured, serve index.html with a local server. Consider using a simple esbuild dev server.\" && exit 0",
+    "build": "esbuild index.tsx --bundle --outfile=index.js --platform=browser --format=esm --jsx=automatic --external:react --external:react-dom --external:react-dom/ --external:react/ --sourcemap --log-level=info",
     "start": "echo \"No start script configured.\" && exit 0"
   },
   "keywords": [
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "esbuild": "^0.20.0"
   }
 }
