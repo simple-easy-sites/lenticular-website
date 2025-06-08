@@ -51,7 +51,7 @@ const YouTubeGrowthSection: React.FC = () => {
           <h3 className="text-2xl sm:text-3xl font-inter font-semibold tracking-tight text-[#1a1a1a] text-center mb-8 md:mb-12">
             Our Work <span className="accent-gradient-text">in Action</span>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto"> {/* Changed max-w-6xl to max-w-4xl for a tighter 2x2 grid appearance & lg:grid-cols-3 to lg:grid-cols-2 */}
             {FEATURED_YOUTUBE_VIDEOS.map(video => (
               <div key={video.id} className="rounded-xl overflow-hidden shadow-xl bg-white transform hover:scale-105 transition-transform duration-300 ease-in-out">
                 <div className="aspect-video"> {/* Maintains 16:9 aspect ratio */}
