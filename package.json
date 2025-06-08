@@ -1,0 +1,29 @@
+
+{
+  "name": "lenticular-ai-landing",
+  "version": "1.0.0",
+  "description": "Landing page for Lenticular AI",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"No dev script configured, serve index.html with a local server.\" && exit 0",
+    "build": "echo \"No build script configured, static site.\" && exit 0",
+    "start": "echo \"No start script configured.\" && exit 0"
+  },
+  "keywords": [
+    "lenticular",
+    "ai",
+    "landing-page",
+    "vercel"
+  ],
+  "author": "Lenticular AI Team",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.0.0"
+  }
+}
