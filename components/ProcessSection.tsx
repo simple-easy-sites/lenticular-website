@@ -8,8 +8,8 @@ const ProcessSection: React.FC = () => {
     <section id="process" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter font-semibold tracking-tight text-[#1a1a1a] mb-3">Your Media Team—<span className="accent-gradient-text">Without the Overhead</span></h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-inter">Three steps to transform your business presence</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter font-semibold tracking-tight text-[#1a1a1a] mb-3">Your Expert Marketing Team—<span className="accent-gradient-text">Without the Full-Time Cost</span></h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-inter">Our simple 3-step process gets your business seen and your phone ringing.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">

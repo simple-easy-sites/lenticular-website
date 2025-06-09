@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { FAQItem as FAQItemType } from '../types';
 

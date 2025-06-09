@@ -8,19 +8,15 @@ const YouTubeGrowthSection: React.FC = () => {
     <section id="youtube-growth" className="py-16 md:py-24 bg-gray-50"> {/* Consistent background with other sections */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          {/* The large "YouTube" title remains as styled previously */}
           <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-inter font-bold tracking-tighter accent-gradient-text mb-4 md:mb-6">
             YouTube
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter font-semibold tracking-tight text-[#1a1a1a] mb-6">
-            Your Business's Next <span className="accent-gradient-text">Revenue Stream</span>
+            Turn Viewers into <span className="accent-gradient-text">Paying Customers</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-inter leading-relaxed">
-            While your competitors fight for attention on platforms that don't pay, smart businesses are building income streams on YouTube. 
-            With <strong className="font-semibold text-purple-600">2.7 billion monthly users</strong> watching <strong className="font-semibold text-purple-600">1 billion hours daily</strong>, it's the only major platform that actually pays you to build an audience. 
-            Every video becomes a 24/7 asset working for your business—generating leads, establishing authority, and creating revenue that compounds over time. 
-            Your expertise could be earning you thousands monthly, but only if you're where your customers are actively searching for solutions. 
-            Stop leaving money on the table while others claim their share of the world's <strong className="font-semibold text-purple-600">second-largest search engine</strong>.
+            Stop ignoring the <strong className="font-semibold text-purple-600">second largest search engine</strong>. While your competitors are just posting on social media, you could be building a real asset on YouTube that <strong className="font-semibold text-purple-600">generates leads and revenue 24/7</strong>. 
+            Homeowners are searching YouTube right now for solutions you provide. We help you get found, build trust with helpful videos, and turn those views into booked jobs. It's modern word-of-mouth, amplified.
           </p>
         </div>
 
@@ -49,7 +45,7 @@ const YouTubeGrowthSection: React.FC = () => {
         {/* Featured YouTube Videos Section */}
         <div className="mt-16 md:mt-20">
           <h3 className="text-2xl sm:text-3xl font-inter font-semibold tracking-tight text-[#1a1a1a] text-center mb-8 md:mb-12">
-            Our Work <span className="accent-gradient-text">in Action</span>
+            See How We Help Businesses <span className="accent-gradient-text">Like Yours</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto"> {/* Changed max-w-6xl to max-w-4xl for a tighter 2x2 grid appearance & lg:grid-cols-3 to lg:grid-cols-2 */}
             {FEATURED_YOUTUBE_VIDEOS.map(video => (

@@ -15,12 +15,12 @@ const HeroSection: React.FC = () => {
             }}
           ></div>
           <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-inter font-bold tracking-tighter text-[#1a1a1a] leading-tight">
-            Your Business Is Built to Last—<br className="hidden md:inline" />
+            Your Business is Built to Last.<br className="hidden md:inline" />
             <span className="accent-gradient-text">Your Content Should Be Too.</span>
           </h1>
         </div>
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-inter">
-          Lenticular turns your social presence into a real growth channel—powered by AI, shaped by story.
+          Lenticular turns your social presence into a real growth channel powered by AI, shaped by story.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">

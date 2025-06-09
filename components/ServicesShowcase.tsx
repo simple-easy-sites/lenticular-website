@@ -1,48 +1,66 @@
 
 import React from 'react';
-import { SERVICE_TIERS_DATA } from '../constants';
+import { SERVICE_TIERS_DATA, ADDITIONAL_SERVICES_DATA } from '../constants';
 import ServiceTierCard from './ServiceTierCard';
+import AdditionalServiceCard from './AdditionalServiceCard'; // New import
 import { ServiceTier } from '../types';
 
-const ServicesShowcase: React.FC = () => {
-  // Group services by tierGroup
-  const groupedServices = SERVICE_TIERS_DATA.reduce((acc, service) => {
-    (acc[service.tierGroup] = acc[service.tierGroup] || []).push(service);
-    return acc;
-  }, {} as Record<string, ServiceTier[]>);
+interface ServicesShowcaseProps {
+  onPlanSelect: (planId: string) => void;
+}
+
+const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onPlanSelect }) => {
+  // Get only the VISIBILITY ENGINE tier group for card display
+  const visibilityEngineTiers = SERVICE_TIERS_DATA.filter(
+    service => service.tierGroup === "VISIBILITY ENGINE"
+  );
 
   return (
     <section id="services" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter font-semibold tracking-tight text-[#1a1a1a] mb-4">Not Just Content. We <span className="accent-gradient-text">Architect Momentum.</span></h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-inter">Choose your growth trajectory. Scale at your pace.</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter font-semibold tracking-tight text-[#1a1a1a] mb-4">Stop Losing Jobs to Competitors. <span className="accent-gradient-text">Start Dominating Online.</span></h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-inter">Choose the services you need to get more calls, book more jobs, and grow your business predictably.</p>
         </div>
 
-        {/* <div className="mb-12 md:mb-16 max-w-4xl mx-auto">
-           <img 
-             src="/data-wave.jpeg" 
-             alt="Abstract digital wave of interconnected data points, content snippets, and UI elements" 
-             className="w-full h-auto rounded-xl shadow-lg object-cover aspect-[16/7]" 
-           />
-        </div> */}
-
-        {Object.entries(groupedServices).map(([groupName, tiers]) => (
-          <div key={groupName} className="mb-16 md:mb-20">
-            <h3 className="text-2xl sm:text-3xl font-inter font-semibold tracking-tight text-purple-700 mb-3 text-center">{groupName}</h3>
+        {/* VISIBILITY ENGINE Section */}
+        {visibilityEngineTiers.length > 0 && (
+          <div className="mb-16 md:mb-20">
+            <h3 className="text-2xl sm:text-3xl font-inter font-semibold tracking-tight text-purple-700 mb-3 text-center">VISIBILITY ENGINE</h3>
             <p className="text-md text-gray-500 mb-8 md:mb-10 text-center max-w-xl mx-auto font-inter">
-              {groupName === "VISIBILITY ENGINE" && "For businesses ready to show up consistently"}
-              {groupName === "LEAD ENGINE" && "For businesses ready to convert traffic into customers"}
-              {groupName === "GROWTH SUITE" && "For businesses scaling operations and team"}
-              {groupName === "CUSTOM SOLUTIONS" && "For established businesses requiring bespoke tools"}
+              Get consistently found by local homeowners searching for your services.
             </p>
-            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${Math.min(tiers.length, 3)} gap-8`}>
-              {tiers.map(tier => (
-                <ServiceTierCard key={tier.id} tier={tier} />
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${Math.min(visibilityEngineTiers.length, 3)} gap-8`}>
+              {visibilityEngineTiers.map(tier => (
+                <ServiceTierCard 
+                  key={tier.id} 
+                  tier={tier} 
+                  actionButtonLabel="Choose Plan"
+                  onActionButtonClick={() => onPlanSelect(tier.id)}
+                />
               ))}
             </div>
           </div>
-        ))}
+        )}
+
+        {/* ADDITIONAL SERVICES Section */}
+        <div className="mt-16 md:mt-20 text-center">
+          <h3 className="text-2xl sm:text-3xl font-inter font-semibold tracking-tight text-purple-700 mb-2">ADVANCED GROWTH SYSTEMS</h3>
+          <p className="text-md text-gray-500 mb-8 md:mb-10 max-w-xl mx-auto font-inter">For established businesses ready to scale operations and maximize profitability. (Pricing available on consultation)</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {ADDITIONAL_SERVICES_DATA.map(service => (
+              <AdditionalServiceCard 
+                key={service.id}
+                iconText={service.iconText}
+                title={service.title}
+                description={service.description}
+                features={service.features || []} // Pass features
+              />
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

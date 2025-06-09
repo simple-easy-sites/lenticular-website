@@ -32,4 +32,3 @@ This configuration ensures Vercel:
 - Runs your custom build script (`npm run build`), which compiles `index.tsx` to `index.js` in the root.
 - Serves your site from the root directory, correctly finding `index.html`.
 - Your API routes in the `/api` directory will be deployed as serverless functions.
-    

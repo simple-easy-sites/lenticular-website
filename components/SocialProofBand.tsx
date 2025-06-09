@@ -1,17 +1,17 @@
 
 import React from 'react';
-import { CLIENT_LOGOS, REFINED_CREDIBILITY_ELEMENTS } from '../constants'; // STATS_SHOWCASE_ITEMS removed, REFINED_CREDIBILITY_ELEMENTS added
+import { CLIENT_LOGOS, REFINED_CREDIBILITY_ELEMENTS, ONBOARDING_SUCCESS_CALENDLY_LINK } from '../constants'; // STATS_SHOWCASE_ITEMS removed, REFINED_CREDIBILITY_ELEMENTS added
+import Button from './Button'; // Import Button component
 
-const CREDIBILITY_KEYWORDS = ["Expertise", "Innovation", "Impact"]; // Copied from AboutCredibilitySection
+const CREDIBILITY_KEYWORDS = ["Expertise", "Innovation", "Impact"]; // Updated keywords
 
 const SocialProofBand: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-gray-50"> {/* Increased padding */}
+    <section id="social-proof" className="py-16 md:py-24 bg-gray-50"> {/* Increased padding, added id */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter font-semibold tracking-tight text-[#1a1a1a] mb-3">Trusted by Brands That <span className="accent-gradient-text">Demand Excellence</span></h2>
-          {/* Original subtitle for this section - can be kept or adjusted */}
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter mb-8">From Fortune 500 to local legends—we architect momentum for businesses built to last.</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter font-semibold tracking-tight text-[#1a1a1a] mb-3">You Need Marketing That Actually Works. <span className="accent-gradient-text">We Deliver.</span></h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-inter mb-8">Trusted by brands that demand excellence.</p>
         </div>
         
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 mb-12 md:mb-16">
@@ -27,16 +27,15 @@ const SocialProofBand: React.FC = () => {
 
         {/* Merged content from AboutCredibilitySection */}
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          {/* Optional: A sub-heading if needed, e.g., "Enterprise Creativity for Growing Businesses" or integrate into main text */}
           <div className="text-lg text-gray-700 space-y-6 leading-relaxed font-inter">
             <p>
-              Our team has shaped campaigns for Adidas, Nike, and W Hotels. Now we're bringing that same strategic thinking and creative excellence to ambitious local businesses.
+              Our team has experience with big brands, but our passion is helping local service businesses like yours succeed. We know you're busy running your company, so we make marketing simple and effective.
             </p>
             <p>
-              We believe every business deserves marketing that matches their ambition. That's why we've built an advanced system, integrating proprietary AI technology, that delivers Fortune 500 quality at a price that makes sense for growing companies.
+              We use smart AI technology to create high-quality marketing that would typically cost a fortune, but at a price that makes sense for your business. This means you get top-tier results without breaking the bank.
             </p>
             <p className="font-inter font-semibold text-xl text-gray-800">
-              The result? Content that converts, systems that scale, and growth that lasts.
+              The bottom line? We help you get more calls, book more jobs, and build a stronger business.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
@@ -47,8 +46,17 @@ const SocialProofBand: React.FC = () => {
               </div>
             ))}
           </div>
+          <div className="mt-16 text-center">
+            <Button
+              variant="accent"
+              size="lg"
+              className="font-inter font-semibold"
+              href={ONBOARDING_SUCCESS_CALENDLY_LINK}
+            >
+              Book a Free Strategy Call
+            </Button>
+          </div>
         </div>
-        {/* STATS_SHOWCASE_ITEMS section removed */}
       </div>
     </section>
   );
